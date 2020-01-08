@@ -1,0 +1,26 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+language: R
+sudo: false
+cache: 
+  packages: true
+  directories:
+    - travis_phantomjs
+
+matrix:
+  include:
+  - r: devel
+  - r: release
+  - r: 3.5
+  - r: 3.4
+
+before_install:
+  - "export PHANTOMJS_VERSION=2.1.1"
+  - "export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH"
+
+cache:
+  directories:
+  - travis_phantomjs
+
+env:
+  global:
+  - R_REMOTES_NO_ERRORS_FROM_WARNINGS=true
