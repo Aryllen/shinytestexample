@@ -5,6 +5,7 @@ cache:
   packages: true
   directories:
     - travis_phantomjs
+warnings_are_errors: false
 
 matrix:
   include:
