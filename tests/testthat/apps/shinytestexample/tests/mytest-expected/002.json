@@ -1,9 +1,11 @@
 {
   "input": {
-    "hi": 2
+    "cookie": "",
+    "hi": 1
   },
   "output": {
-    "greet": "sup"
+    "greet": "howdy",
+    "loggedin": "Logged in"
   },
   "export": {
 

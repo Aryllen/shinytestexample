@@ -1,9 +1,9 @@
 {
   "input": {
-    "hi": 1
+    "hi": 0
   },
   "output": {
-    "greet": "howdy"
+
   },
   "export": {
 
