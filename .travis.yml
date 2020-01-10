@@ -1,14 +1,15 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 language: R
 sudo: false
-cache: 
-  packages: true
+cache: packages
   directories:
     - travis_phantomjs
 warnings_are_errors: false
+
 env:
   global:
-    - PATH=/opt/python/3.7.1/bin:$PATH
+    - R_REMOTES_NO_ERRORS_FROM_WARNINGS=true
+    - secure: W5n5DOOt2gouN6AEpdpVavXb+roGV+It5g/nrLQfbmYj/U7j8X6YT4Z/4VZCpUef3WyNNnUULVk2Ork2p7G5ZRpjnrlpKdUfC9IbwckZKSnAmF2bjhnPmGEkRiJoWtU24w1UvBN7wk4Si0PW6FDXUsTrWPWdgDFzdvdLyroGjzX1fMLAjyy/IW7C5SFGh7Y1zMJfBN/J7QNAwtAdhWWETs1RRwpgziKsak7rNA4MP5+0WQqHgUgPQrICA2f/+2QArG9XSsDY5TDdZewz5QHFgIEMVC4gmqSbzcVRfrUqJemM60d8lVAXDaIB72TYn2gsl084vmT/7LUVOBQTDf5uQ852HZB1AtvEy6XgDXWPJtRsIHo00b0J6zVoIeGfViSnLlRDu3nGDV1P8lhukPmyHF12a3UoprUbAu7Oh2lo4K0tz6PFJDhgZ4n5A4VVP03MehNIXYh4n79vIVKaoK9Wgcr7ZHUXQ1yu8f9APZ44ggGG9VdphSsXmhf6rHeAgM6LW5hHylqNL6OPSsOnziSxFRw3wwy1fV9n0NU91Wf9H84dcZUxNKmAc5nxwQx+QMH1omrruHM2XxI2ugUXzNL4DzYSDnrVx7NM2Oi8UvxLB8le0Ow9JhTbQ1K5xSXyIxZFdr8xNuvIF3MflOnrdPAMViJ0QMCQ6/raekB/gIe06es=
+    - secure: RWo+vKQXKXmUBtCMT0WQCZ++yTZFLfB0ZRV7A/fNAU4UkSX2Z6T1MfLXD3MYrIt/HLPIxD+Y1qevn3TQL+3QItHvSENfyCEKDY12Q8Sp1JbtUIOaY6CIHDhBhEOUaTK7pMI9zIX0tBbyVl62bfBCrx56256W49DbL7By6678dHjuLxvulRpfNHQ5nRFGEe5kZj7Sfsx7S1C2Fawdc9phCKfw7qxEjSPTEuZFMsUji5DnidtH7s2zWsidecepw33+lAPLmPXJ1+w2sFHdesuPpsbwMu8lcdeIEmrcfW/xdNTAMBqTTF+o0feCDO8yR/off7+p3sND1p4EdrKsUsrthzgD4u4ELzgr/A1HFxdYBzAYh8T1syErMhUSY3cP+uLG9mTOXaHp3zfv5hqCQmRxZmWVf6psYYOqAlanbDAoniDwMQb6BxnzpUqm+ruth1g6QZkRrEFtdh7pLeG2LsxXnWc0W/HKEM7yML3gDSMP/Zt2Aa4dk+04dqhbbf7Car5wr49Q4e7CyKv/Nknu9qQX7YtNi++KePR/Fg/7iKBsUpSOqfYRdJjisK3iQcMRAVpIsKbxUyIEFaVI2FGqvcNX249DsvruyxQIdpUEK0g1Pp7l1V39spKjJZrvEQ3BfiRGGQY1o1VnYj5Xxf707vJoqnbJNV4ff7AkRgMXki0nAiM=
 
 matrix:
   include:
@@ -23,11 +24,3 @@ before_install:
   - sudo apt-get -y install libv8-dev
   - "export PHANTOMJS_VERSION=2.1.1"
   - "export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH"
-
-cache:
-  directories:
-  - travis_phantomjs
-
-env:
-  global:
-  - R_REMOTES_NO_ERRORS_FROM_WARNINGS=true
